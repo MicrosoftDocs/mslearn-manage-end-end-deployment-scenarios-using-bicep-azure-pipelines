@@ -1,0 +1,22 @@
+﻿@page
+@model ToyCompany.Website.Pages.ToysModel
+@{ ViewData["Title"] = "Our Toys"; }
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="card-columns">
+    @foreach (var toy in Model.Toys)
+    {
+    <div class="card">
+        <img class="card-img-top" src="@toy.ImageUrl" />
+        <div class="card-body">
+            <h5 class="card-title">@toy.Name</h5>
+            <p class="card-text">@toy.Description</p>
+        </div>
+        <div class="card-footer text-muted">
+            @Html.DisplayFor(model => toy.Price)
+        </div>
+    </div>
+    }
+</div>
+
